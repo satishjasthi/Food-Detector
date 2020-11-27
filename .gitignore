@@ -1,0 +1,9 @@
+*.png
+*.jpeg
+*.jpg
+*.csv
+*.vscode
+*pycache
+*.DS_Store
+*.zip
+*.cms
