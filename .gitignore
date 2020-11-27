@@ -1,9 +1,11 @@
 *.png
 *.jpeg
 *.jpg
+*.JPG
 *.csv
 *.vscode
 *pycache
 *.DS_Store
 *.zip
 *.cms
+lightning_logs/
