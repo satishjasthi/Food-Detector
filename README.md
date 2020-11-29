@@ -7,6 +7,10 @@ This repository contains a pretrained ResNet18 model for detecting white rice in
   cd src
   streamlit run serve_model.py
   ```
+# Sample Data
+![Sample Data vis](https://i.imgur.com/q82jCQk.png)
 
+# Understanding Model's predictions
+![GradCam HeatMaps](https://i.imgur.com/b07oYnk.png)
 ## Model inference demo
 ![Model Inference GIF](demo.gif)

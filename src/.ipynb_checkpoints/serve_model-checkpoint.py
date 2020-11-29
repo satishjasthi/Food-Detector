@@ -1,3 +1,8 @@
+"""
+Script to server classification model
+
+usage: streamlit run serve_model.py
+"""
 import io, torch
 from pathlib import Path
 import streamlit as st
@@ -9,7 +14,7 @@ ProjectRoot = Path(__file__).resolve().parent.parent
 model = models.resnet18(pretrained=True)
 num_ftrs = model.fc.in_features
 model.fc = torch.nn.Linear(num_ftrs, 2)
-model.load_state_dict(torch.load(str(ProjectRoot/'src/best_model.pth')))
+model.load_state_dict(torch.load(str(ProjectRoot/'models/best_model.pth')))
 model.eval()
 classes = ['Not White Rice', 'White Rice']
 
@@ -20,12 +25,10 @@ def predict_image(image):
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
     image_tensor = test_transforms(image)
-    print(image_tensor.shape)
     image_tensor = image_tensor.unsqueeze(0)
 
     
     output = model(image_tensor)
-    print(output)
     return classes[output.data.numpy().argmax()]
 
 st.title("Detectron")
