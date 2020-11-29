@@ -1,3 +1,8 @@
+"""
+Script to server classification model
+
+usage: streamlit run serve_model.py
+"""
 import io, torch
 from pathlib import Path
 import streamlit as st
